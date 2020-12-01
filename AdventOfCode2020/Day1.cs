@@ -206,9 +206,37 @@ namespace AdventOfCode2020
             1726,
             1364,
             };
-        public int DayOne()
+        public int[] DayOne()
         {
-            Console.WriteLine("Processing Day One");
+            Console.WriteLine("You Selected Day One");
+            int[] Results = new int[2];
+            Results[0] = dayOnePartOne();
+            Results[1] = dayOnePartTwo();
+            return Results;
+        }
+
+        public int dayOnePartOne()
+        {
+            Console.WriteLine("Processing Day One Part One");
+            foreach (var inputOne in inputSourceArray)
+            {
+                foreach (var inputTwo in inputSourceArray)
+                {
+                    if (inputOne != inputTwo)
+                    {
+                        if (inputOne + inputTwo == 2020)
+                        {
+                            return (inputOne * inputTwo);
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
+        public int dayOnePartTwo()
+        {
+            Console.WriteLine("Processing Day One Part Two");
             foreach (var inputOne in inputSourceArray)
             {
                 foreach (var inputTwo in inputSourceArray)
